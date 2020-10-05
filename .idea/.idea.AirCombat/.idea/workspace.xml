@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="27398ec5-ec9e-4509-8a1d-b9225dfbb7dc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AirCombat/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AirCombat/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AirCombat/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AirCombat/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AirCombat/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.AirCombat/riderModule.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute/BindPrefabAttribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute/BindPrefabAttribute.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute/InitCustomAtrribute.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/UIMgr.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/BindUtil.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/UIUtil.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LaunchGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LaunchGame.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Manager/LoadMgr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Manager/LoadMgr.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Module/Load/ResourceLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Module/Load/ResourceLoader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ArtifactDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ArtifactDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/02/02111da10668c63d73a08fd2d8d633dd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/09/09f4a2cc71d0bc4583ed551710c226e7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/10/10760a495d74ea34f0261f848d28d56d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/29/29a68be69717ed2b7423bd84a3f4852f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/35/35921b897aa7dbfc236a30fd14509028" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/3f/3fc7630820ebe5f875667b81581a59dc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/42/42bb2cfe0ac5ab2daba2f2fb197e44ae" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/48/483035307f8e4e5262d2b590ee8fd04a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/56/561936924a4014a06d13ff5e604481a5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/56/569483e4d0a0b98e734b829b206a307e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/5c/5ca3d12631ba4e5ce90bbc557c78e4e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/63/63d03ed615a5741e768e6824f861bd2c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/65/65422222b4d95b93c2ea31474315dd2a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/65/65a6c401fdd6862844191e1861c45b1d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/66/66b66ca8a2bf993497ff16f6b14c4bbd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7b/7b4a944d93c1bf20916da9f4eefa3fd3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7b/7b505fd08ae3acc3f6c6ea51486c8c84" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/7e/7eca7f6e3a41d3c2b9a7de4113b8584d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8a/8a3851fc6b5b042636ab19f4294fda65" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/8d/8d49fa7995f78b37395f360c60dea55e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/91/9144c162de811ab2d807612e0f3e97da" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/91/91a24b938343b0195bebac798b4d3aa8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/94/94cef5fe736abe4d77f948bfc13a8f9f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/98/986a4f962b75cf4fc00fcac8a51d4ea3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/9f/9f1d9290b8f13a352b0154b721d975fd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/a0/a03831a92d9c8083d38cfb5c72b388a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ad/ad7b8c6cc8eba93f82c8ebaf84d044e6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/af/af35d5c9e9cfbbab14c447b42c833095" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/b7/b70b8f9624d634de839e6580c23b382b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ce/cec147d4616d13c14d03f384efdec633" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e0/e0bcbda7c79bb175dd16669a33973c4e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e7/e71c534d0ab5939a561cfc87b0d2b806" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/e7/e7662ae3dc7f9bc3a7f5d760b106bc8d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/ec/ec9fea27d7a977a20ee7fdaf2d7640de" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f2/f2181804ef6c7691c60d626c0298ba60" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f6/f68e2589f6da49081209c30ed2f85169" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f6/f6c42b0903807fe8c5336262818e19a2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/Artifacts/f7/f743e525ee750505c74bc770c0b896db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/SourceAssetDB" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SourceAssetDB" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/BindUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attribute/InitCustomAtrribute.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0DF6749E-A7EB-43F5-8475-647FABED0313/36/4ba7237b/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11BD515F-D2A0-4526-8509-D23726DE0F46/b9/362a77d4/MemberInfo.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11BD515F-D2A0-4526-8509-D23726DE0F46/dd/3f22617d/CustomAttributeExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Utils/UIUtil.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/11BD515F-D2A0-4526-8509-D23726DE0F46/92/bfa66b81/Assembly.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Manager/UIMgr.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attribute/BindPrefabAttribute.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attribute/BindPrefabAttribute.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Module/Load/ResourceLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LaunchGame.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/BindUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/Singleton/NormalSingleton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Manager/LoadMgr.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/IView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Manager/UIMgr.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/ViewBase.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/View/StartView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attribute/InitCustomAtrribute.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/UIUtil.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1iSbxIG5YVfT2OLpl8g8TuL5dk8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="27398ec5-ec9e-4509-8a1d-b9225dfbb7dc" name="Default Changelist" comment="" />
+      <created>1601904188422</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1601904188422</updated>
+      <workItem from="1601904191852" duration="9316000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="558" y="114" key="RiderGenerateDialog" timestamp="1601913067365">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="558" y="114" key="RiderGenerateDialog/0.0.1536.824@0.0.1536.824" timestamp="1601913067365" />
+    <state x="270" y="0" key="SettingsEditor" timestamp="1601905912677">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1601905912677" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1601913096281">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1601913096281" />
+  </component>
+</project>

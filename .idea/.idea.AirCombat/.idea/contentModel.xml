@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kyf19\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kyf19\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_AirCombat.-1909651027.00" t="ExcludeRecursive" />
+    <e p="D:\code\AirCombat\AirCombat" t="IncludeRecursive">
+      <e p="AirCombat.sln" t="IncludeFlat" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Demigiant" t="Include">
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Editor" t="Include">
+          <e p="TextureFormat.cs" t="Include" />
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="Attribute" t="Include">
+            <e p="BindPrefabAttribute.cs" t="Include" />
+            <e p="InitCustomAtrribute.cs" t="Include" />
+          </e>
+          <e p="LaunchGame.cs" t="Include" />
+          <e p="Manager" t="Include">
+            <e p="LoadMgr.cs" t="Include" />
+            <e p="UIMgr.cs" t="Include" />
+          </e>
+          <e p="Module" t="Include">
+            <e p="Load" t="Include">
+              <e p="ABLoader.cs" t="Include" />
+              <e p="ILoader.cs" t="Include" />
+              <e p="ResourceLoader.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Utils" t="Include">
+            <e p="BindUtil.cs" t="Include" />
+            <e p="Singleton" t="Include">
+              <e p="MonoSingleton.cs" t="Include" />
+              <e p="NormalSingleton.cs" t="Include" />
+            </e>
+            <e p="UIUtil.cs" t="Include" />
+          </e>
+          <e p="View" t="Include">
+            <e p="IView.cs" t="Include" />
+            <e p="StartView.cs" t="Include" />
+            <e p="ViewBase.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
