@@ -4,19 +4,13 @@ using UnityEngine;
 
 namespace View
 {
-    [BindPrefab("Prefab/StartView")]
-    public class StartView : MonoBehaviour
+    [BindPrefab(Paths.START_VIEW)]
+    public class StartView : ViewBase
     {
-        // Start is called before the first frame update
-        void Start()
+        public override void Init()
         {
-            Debug.LogError("start");
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-        
+            base.Init();
+            UIUtil.Get("Start").AddListener(()=>{Debug.LogError("点击开始按钮");});
         }
     }
 }

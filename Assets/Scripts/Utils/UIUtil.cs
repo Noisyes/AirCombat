@@ -6,13 +6,41 @@ using UnityEngine.UI;
 
 public class UIUtil : MonoBehaviour
 {
+    private Dictionary<string, UIUtilData> UIDatas;
     public void Init()
     {
+        UIDatas = new Dictionary<string, UIUtilData>();
+        RectTransform rect = transform.GetComponent<RectTransform>();
+        foreach (RectTransform rectTransform in rect)
+        {
+            UIDatas.Add(rectTransform.name,new UIUtilData(rectTransform));
+        }
+    }
 
+    public UIUtilData Get(string name)
+    {
+        if (UIDatas.ContainsKey(name))
+        {
+            return UIDatas[name];
+        }
+        else
+        {
+            Transform rect = transform.Find(name);
+            if (rect == null)
+            {
+                Debug.LogError("无法按照路径查找到物体， 路径为:" + name);
+                return null;
+            }
+            else
+            {
+                UIDatas.Add(name,new UIUtilData(rect.GetComponent<RectTransform>()));
+                return UIDatas[name];
+            }
+        }
     }
 }
 
-public class UIUtilData : MonoBehaviour
+public class UIUtilData
 {
     public GameObject GO { get; private set; }
     public RectTransform RectTrans { get; private set; }

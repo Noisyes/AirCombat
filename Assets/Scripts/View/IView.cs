@@ -6,5 +6,5 @@ public interface IView
 {
     void Init();
     void Show();
-    void Back();
+    void Hide();
 }

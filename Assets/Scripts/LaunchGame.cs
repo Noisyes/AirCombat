@@ -7,6 +7,6 @@ public class LaunchGame : MonoBehaviour
     private void Awake()
     {
         InitCustomAtrribute.Init();
-        LoadMgr.Instance.LoadPrefab("Prefab/StartView",transform);
+        UIMgr.Instance.Show(Paths.START_VIEW);
     }
 }
