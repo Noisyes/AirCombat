@@ -10,7 +10,10 @@ namespace View
         public override void Init()
         {
             base.Init();
-            UIUtil.Get("Start").AddListener(()=>{Debug.LogError("点击开始按钮");});
+            UIUtil.Get("Start").AddListener(() =>
+            {
+                UIMgr.Instance.Show(Paths.SELECTEDHERO_VIEW);
+            });
         }
     }
 }
