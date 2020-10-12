@@ -1,0 +1,9 @@
+{
+  "planes":[
+    {
+      "planeId":1,
+      "level":2,
+      "fireRate":0.8
+    }
+  ]
+}

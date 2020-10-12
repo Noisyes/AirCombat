@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class LoadMgr : NormalSingleton<LoadMgr>
+public class LoadMgr : NormalSingleton<LoadMgr>,ILoader
 {
     private ILoader _loader;
     public LoadMgr()
@@ -11,9 +11,14 @@ public class LoadMgr : NormalSingleton<LoadMgr>
         _loader = new ResourceLoader();
     }
 
-    public GameObject LoadPrefab(string path, Transform parent = null)
+    public GameObject LoadPath(string path, Transform parent = null)
     {
         GameObject tmp = _loader.LoadPath(path, parent);
         return tmp;
+    }
+
+    public void LoadConfig(string path, Action<object> completed)
+    {
+        _loader.LoadConfig(path,completed);
     }
 }

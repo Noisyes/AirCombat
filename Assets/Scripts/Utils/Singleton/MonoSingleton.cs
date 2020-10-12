@@ -12,25 +12,11 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoBehaviour
         {
             if(_instance == null)
             {
-                _instance = FindObjectOfType<T>();
-                if(_instance == null)
-                {
-                    Debug.LogError($"没有找到mono类单例，当前类型T为:{typeof(T).Name}");
-                    return null;
-                }
+                GameObject go = new GameObject(typeof(T).Name);
+                DontDestroyOnLoad(go);
+                _instance = go.AddComponent<T>();
             }
             return _instance;
-        }
-    }
-    private void Awake()
-    {
-        if(_instance ==null)
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
         }
     }
 }

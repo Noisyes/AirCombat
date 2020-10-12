@@ -47,7 +47,7 @@ public class UIMgr : NormalSingleton<UIMgr>
         }
         else
         {
-            var viewGO = LoadMgr.Instance.LoadPrefab(path, CurCanvas.transform);
+            var viewGO = LoadMgr.Instance.LoadPath(path, CurCanvas.transform);
             Type type = BindUtil.GetType(path);
             IView view;
             if (type != null)
