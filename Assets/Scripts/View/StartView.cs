@@ -7,9 +7,8 @@ namespace View
     [BindPrefab(Paths.START_VIEW)]
     public class StartView : ViewBase
     {
-        public override void Init()
+        protected override void InitChild()
         {
-            base.Init();
             UIUtil.Get("Start").AddListener(() =>
             {
                 UIMgr.Instance.Show(Paths.SELECTEDHERO_VIEW);

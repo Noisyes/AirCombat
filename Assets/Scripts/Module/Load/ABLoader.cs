@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class ABLoader : ILoader
 {
@@ -11,6 +12,16 @@ public class ABLoader : ILoader
     }
 
     public void LoadConfig(string path, Action<object> completed)
+    {
+        throw new NotImplementedException();
+    }
+
+    public T LoadData<T>(string path) where T : Object
+    {
+        throw new NotImplementedException();
+    }
+
+    public T[] LoadAllData<T>(string path) where T : Object
     {
         throw new NotImplementedException();
     }

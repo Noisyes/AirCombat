@@ -22,6 +22,27 @@ public class ResourceLoader : ILoader
         CoroutineMgr.Instance.ExecuteOnce(Config(path,completed));
     }
 
+    public T LoadData<T>(string path) where T : Object
+    {
+        T data = Resources.Load<T>(path);
+        if (data == null)
+        {
+         Debug.LogError("当前没有可以加载的数据，路径:"+path);   
+        }
+        return data;
+    }
+
+    public T[] LoadAllData<T>(string path) where T : Object
+    {
+        T[] datas = Resources.LoadAll<T>(path);
+        if (datas == null || datas.Length <= 0)
+        {
+            Debug.LogError("当前没有可以加载的数据，路径:"+path);
+            return null;
+        }
+        return datas;
+    }
+
     private IEnumerator Config(string path, Action<object> completed)
     {
         if(Application.platform != RuntimePlatform.Android)
