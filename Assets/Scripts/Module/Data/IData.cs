@@ -8,4 +8,5 @@ public interface IData
     void Set<T>(string key, T value);
     void Clear(string key);
     void ClearAll();
+    bool Contains(string key);
 }

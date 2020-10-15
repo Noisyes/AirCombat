@@ -30,4 +30,9 @@ public class DataMgr : NormalSingleton<DataMgr>,IData
     {
         _data.ClearAll();
     }
+
+    public bool Contains(string key)
+    {
+        return _data.Contains(key);
+    }
 }

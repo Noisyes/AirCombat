@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PropertyItem : MonoBehaviour
 {
+    private static int _id = -1;
     private string _key;
     private IReader _reader;
     public enum ItemKey
@@ -19,6 +20,14 @@ public class PropertyItem : MonoBehaviour
     public void Init(string key)
     {
         _key = key;
+        _id++;
+        UpdatePos();
+    }
+
+    private void UpdatePos()
+    {
+        RectTransform rectTransform = transform.Rect();
+        rectTransform.anchoredPosition -= rectTransform.rect.height * _id*Vector2.up;
     }
 
     public void UpdateID(int id)

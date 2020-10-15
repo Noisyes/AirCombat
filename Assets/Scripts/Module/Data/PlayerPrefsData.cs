@@ -58,4 +58,9 @@ public class PlayerPrefsData : IData
     {
         PlayerPrefs.DeleteAll();
     }
+
+    public bool Contains(string key)
+    {
+        return PlayerPrefs.HasKey(key);
+    }
 }

@@ -9,4 +9,5 @@ public interface IReader
     IReader this[int key] { get; }
     void Get<T>(Action<T> callBack);
     void SetData(object data);
+    ICollection<string> Keys();
 }

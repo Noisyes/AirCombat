@@ -98,8 +98,23 @@ public class JsonReader : IReader
 
     private T GetValue<T>(JsonData data)
     {
-        var convert = TypeDescriptor.GetConverter(typeof(T));
-        return (T) convert.ConvertTo(data.ToString(), typeof(T));
+        try
+        {
+            var convert = TypeDescriptor.GetConverter(typeof(T));
+            if (convert.CanConvertTo(typeof(T)))
+            {
+                return (T) convert.ConvertTo(data.ToString(), typeof(T));
+            }
+            else
+            {
+                return (T)(object) data;
+            }
+        }
+        catch
+        {
+            Debug.LogError("当前类型无法转换，类型为"+typeof(T));
+            return default(T);
+        }
     }
 
     private void ResetData()
@@ -119,6 +134,16 @@ public class JsonReader : IReader
         {
             Debug.LogError("不是Json类型的数据");
         }
+    }
+
+    public ICollection<string> Keys()
+    {
+        if (_curData == null)
+        {
+            return new List<string>();
+        }
+
+        return _curData.Keys;
     }
 }
 

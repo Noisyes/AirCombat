@@ -15,6 +15,7 @@ public class NormalSingleton<T> where T : class, new ()
                 if(singleton is MonoBehaviour)
                 {
                     Debug.LogError("should use MonoBehaviourSingleton");
+                    return null;
                 }
                 _instance = singleton;
             }
