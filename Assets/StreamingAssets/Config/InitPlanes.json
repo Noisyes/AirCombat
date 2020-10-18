@@ -1,9 +1,32 @@
 {
   "planes":[
     {
+      "planeId":0,
+      "level":1,
+      "attack": {"name":"攻击","value": 5,"cost": 200,"grouth": 10},
+      "fireRate": {"name":"攻速","value":0.8,"cost": 200,"grouth": 0.01},
+      "life" : {"name":"生命","value":100,"cost": 200,"grouth": 50}
+    },
+    {
       "planeId":1,
-      "level":2,
-      "fireRate":0.8
+      "level":1,
+      "attack": {"name":"攻击","value": 10,"cost": 200,"grouth": 20},
+      "fireRate": {"name":"攻速","value":0.6,"cost": 200,"grouth": 0.02},
+      "life" : {"name":"生命","value":120,"cost": 200,"grouth": 100}
+    },
+    {
+      "planeId":2,
+      "level":1,
+      "attack": {"name":"攻击","value": 20,"cost": 200,"grouth": 50},
+      "fireRate": {"name":"攻速","value":0.4,"cost": 200,"grouth": 0.03},
+      "life" : {"name":"生命","value":150,"cost": 200,"grouth": 200}
+    },
+    {
+      "planeId":3,
+      "level":1,
+      "attack": {"name":"攻击","value": 40,"cost": 200,"grouth": 80},
+      "fireRate": {"name":"攻速","value":0.2,"cost": 200,"grouth": 0.05},
+      "life" : {"name":"生命","value":200,"cost": 200,"grouth": 300}
     }
   ]
 }

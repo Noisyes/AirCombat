@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IView
+public interface IViewHide
 {
-    void Init();
-    void Show();
-    void Hide();
+   void Hide();
 }

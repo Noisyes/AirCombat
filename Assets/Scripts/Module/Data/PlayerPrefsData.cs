@@ -9,9 +9,11 @@ public class PlayerPrefsData : IData
 {
     private Dictionary<Type, Func<string, object>> _dataGetter = new Dictionary<Type, Func<string, object>>
     {
-        {typeof(int),(key) => PlayerPrefs.GetInt(key,0)},
-        {typeof(string),(key) => PlayerPrefs.GetString(key,"")},
-        {typeof(float),(key) => PlayerPrefs.GetFloat(key,0)},
+        {typeof(int),(key) => PlayerPrefs.GetInt(key,default(int))},
+        {typeof(float),(key) => PlayerPrefs.GetFloat(key,default(float))},
+        {typeof(string),(key) => PlayerPrefs.GetString(key,default(string))},
+
+
         
     };
     private Dictionary<Type, Action<string,object>> _dataSetter = new Dictionary<Type, Action<string, object>>
@@ -62,5 +64,24 @@ public class PlayerPrefsData : IData
     public bool Contains(string key)
     {
         return PlayerPrefs.HasKey(key);
+    }
+
+    public object GetObject(string key)
+    {
+        if (Contains(key))
+        {
+            foreach (KeyValuePair<Type,Func<string,object>> pair in _dataGetter)
+            {
+                Type type = pair.Key;
+                object oj = type.DefaultForType();
+                object tmp = pair.Value(key);
+                if (!Equals(pair.Value(key),oj))
+                {
+                    return pair.Value(key);
+                }
+            }
+            return null;
+        }
+        return null;
     }
 }

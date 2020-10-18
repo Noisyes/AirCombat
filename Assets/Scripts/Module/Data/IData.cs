@@ -9,4 +9,5 @@ public interface IData
     void Clear(string key);
     void ClearAll();
     bool Contains(string key);
+    object GetObject(string key);
 }

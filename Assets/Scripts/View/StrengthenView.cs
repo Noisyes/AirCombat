@@ -6,7 +6,7 @@ public class StrengthenView : ViewBase
 {
     protected override void InitChild()
     {
-        UIUtil.Get("Switchplayer").GO.AddComponent<SwitchPlayer>();
-        UIUtil.Get("Property").GO.AddComponent<PlaneProperty>();
+        SwitchPlayer switchPlayer = UIUtil.Get("Switchplayer").GO.AddComponent<SwitchPlayer>();
+        PlaneProperty property = UIUtil.Get("Property").GO.AddComponent<PlaneProperty>();
     }
 }

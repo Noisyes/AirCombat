@@ -35,4 +35,9 @@ public class DataMgr : NormalSingleton<DataMgr>,IData
     {
         return _data.Contains(key);
     }
+
+    public object GetObject(string key)
+    {
+        return _data.GetObject(key);
+    }
 }

@@ -21,7 +21,6 @@ public class SwitchPlayer : ViewBase
         {
             string[] idAndLevel = sprite.name.Split('_');
             int id = Int32.Parse(idAndLevel[0]);
-            Debug.LogError((idAndLevel[0]));
             if (!_spriteDictionary.ContainsKey(id))
             {
                 _spriteDictionary.Add(id,new List<Sprite>());
@@ -35,13 +34,14 @@ public class SwitchPlayer : ViewBase
         base.Show();
         _id = DataMgr.Instance.Get<int>(DataKeys.PLANE_ID);
         LoadSprites(Paths.PLAYER);
-        UpdateSprite(ref _id);
+        OnSwitchBtn(ref _id,0);
     }
 
     private void OnSwitchBtn(ref int id,int direction)
     {
         UpdateID(ref id,direction);
         UpdateSprite(ref id);
+        GameStateMgr.Instance.selectedID = id;
     }
 
     private void UpdateID(ref int id, int direction)
@@ -51,6 +51,7 @@ public class SwitchPlayer : ViewBase
         id = (id + direction) % max;
         if (id < 0) id = max - 1;
     }
+    
 
     private void UpdateSprite(ref int id)
     {

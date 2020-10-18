@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class ViewBase : MonoBehaviour,IView
 {
     private UIUtil _uiUtil;
-    private HashSet<ViewBase> _views;
+    private List<IViewInit> _viewInits;
+    private List<IViewShow> _viewShows;
+    private List<IViewHide> _viewHides;
+    private List<IViewUpdate> _viewUpdates;
 
     protected UIUtil UIUtil
     {
@@ -22,43 +27,93 @@ public abstract class ViewBase : MonoBehaviour,IView
     }
     public virtual void Init()
     {
+        //初始化子类和预制体
         InitChild();
-        GetViewSets();
-        foreach (ViewBase viewBase in _views)
+        LoadInterface();
+        
+        //初始化子类的数据
+        InitSubView();
+        InitUpdateView();
+        
+        //添加当前viewbase下所有子类的update函数
+        AddUpdateActionToButton();
+        UpdateAction();
+    }
+
+    private void InitSubView()
+    {
+        foreach (IViewInit viewInit in _viewInits)
         {
-            viewBase.Init();
+            viewInit.Init();
         }
     }
 
     protected abstract void InitChild();
+    
 
     public virtual void Show()
     {
         gameObject.SetActive(true);
-        foreach (ViewBase viewBase in _views)
+        foreach (IViewShow viewShow in _viewShows)
         {
-            viewBase.Show();
+            viewShow.Show();
         }
     }
 
     public virtual void Hide()
     {
-        foreach (ViewBase viewBase in _views)
+        foreach (IViewHide viewHide in _viewHides)
         {
-            viewBase.Hide();
+            viewHide.Hide();
         }
         gameObject.SetActive(false);
     }
 
-    private void GetViewSets()
+    private void LoadInterface()
     {
-        ViewBase views = null;
-        _views = new HashSet<ViewBase>();
-        foreach (Transform trans in transform)
+        _viewInits = new List<IViewInit>();
+        _viewShows = new List<IViewShow>();
+        _viewHides = new List<IViewHide>();
+        InitInterface(_viewInits);
+        InitInterface(_viewShows);
+        InitInterface(_viewHides);
+    }
+    private void InitInterface<T>(List<T> list)
+    {
+        T viewInterface = default(T);
+        foreach (Transform transformChild in transform)
         {
-            views = trans.GetComponent<ViewBase>();
-            if (views != null)
-                _views.Add(views);
+            viewInterface = transformChild.GetComponent<T>();
+            if(viewInterface!=null)
+                list.Add(viewInterface);
+        }
+    }
+
+    private void AddUpdateActionToButton()
+    {
+        foreach (Button button in GetComponentsInChildren<Button>())
+        {
+            //Debug.LogError(name+" "+button.name);
+            //todo::这里好像执行子类updateview多次
+            button.onClick.AddListener(UpdateAction);
+        }
+    }
+
+    public virtual void UpdateView()
+    {
+        
+    }
+
+    private void InitUpdateView()
+    {
+        _viewUpdates = transform.GetComponentsInChildren<IViewUpdate>().ToList();
+    }
+
+    private void UpdateAction()
+    {
+        foreach (IViewUpdate viewUpdate in _viewUpdates)
+        {
+            viewUpdate.UpdateView();
         }
     }
 }

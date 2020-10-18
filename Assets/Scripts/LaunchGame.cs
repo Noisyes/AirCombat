@@ -9,6 +9,5 @@ public class LaunchGame : MonoBehaviour
         ConfigMgr.Instance.Init();
         InitCustomAtrribute.Init();
         UIMgr.Instance.Show(Paths.START_VIEW);
-        
     }
 }
