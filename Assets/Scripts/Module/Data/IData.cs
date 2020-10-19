@@ -10,4 +10,5 @@ public interface IData
     void ClearAll();
     bool Contains(string key);
     object GetObject(string key);
+    void SetObject(string key, object value);
 }

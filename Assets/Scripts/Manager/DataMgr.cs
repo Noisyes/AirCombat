@@ -40,4 +40,9 @@ public class DataMgr : NormalSingleton<DataMgr>,IData
     {
         return _data.GetObject(key);
     }
+
+    public void SetObject(string key, object value)
+    {
+        _data.SetObject(key, value);
+    }
 }

@@ -84,4 +84,21 @@ public class PlayerPrefsData : IData
         }
         return null;
     }
+
+    public void SetObject(string key, object value)
+    {
+        bool isSuccess = false;
+        foreach (KeyValuePair<Type,Action<string,object>> valuePair in _dataSetter)
+        {
+            if (valuePair.Key == value.GetType())
+            {
+                valuePair.Value(key,value);
+                isSuccess = true;
+            }
+        }
+        if (!isSuccess)
+        {
+            Debug.LogError("当前的数据类型不对劲");
+        }
+    }
 }

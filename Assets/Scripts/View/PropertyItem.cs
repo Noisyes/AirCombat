@@ -15,6 +15,7 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
         value,
         cost,
         grouth,
+        maxvalue,
     }
 
     public void Init(string key)
@@ -38,13 +39,26 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
 
     private void AddAction()
     {
-        /*var id = GameStateMgr.Instance.selectedID;
-        string key = KeyUtil.CreateKey(id, _key + ItemKey.value);
+        string key = GetNewKey(ItemKey.value);
         Transform ts = transform.Find(ConvertName(ItemKey.value.ToString()));
-        float value = (int)DataMgr.Instance.GetObject(key);
-        key = KeyUtil.CreateKey(id, _key + ItemKey.grouth);
-        float grouth = (int)DataMgr.Instance.GetObject(key);
-        value += grouth;*/
+        var value = GetValue(key);
+        key = GetNewKey(ItemKey.grouth);
+        var grouth = GetValue(key);
+        value += grouth;
+        value = Mathf.Clamp(value, 0, GetValue(GetNewKey(ItemKey.maxvalue)));
+        DataMgr.Instance.SetObject(GetNewKey(ItemKey.value),value);
+    }
+
+    private string GetNewKey(ItemKey key)
+    {
+        var id = GameStateMgr.Instance.selectedID;
+        string newKey = KeyUtil.CreateKey(id, _key + key);
+        return newKey;
+    }
+
+    private int GetValue(string key)
+    {
+        return DataMgr.Instance.Get<int>(key);
     }
     
     private void UpdateData(int planeID)
@@ -57,13 +71,20 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
             {
                 string key = KeyUtil.CreateKey(planeID, _key + i);
                 ts.GetComponent<Text>().text = DataMgr.Instance.GetObject(key).ToString();
-                Debug.LogError("hh2");
             }
             else
             {
                 Debug.LogError("预制体属性名称错误");
             }
         }
+    }
+
+    private void UpdateSlider()
+    {
+        var slider = transform.Find("Slider").GetComponent<Slider>();
+        slider.minValue = 0;
+        slider.maxValue = GetValue(GetNewKey(ItemKey.maxvalue));
+        slider.value = DataMgr.Instance.Get<int>(GetNewKey(ItemKey.value));
     }
 
     private string ConvertName(string oldName)
@@ -75,11 +96,13 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
     public void UpdateView()
     {
         UpdateData(GameStateMgr.Instance.selectedID);
+        UpdateSlider();
     }
 
     public void Show()
     {
         var id  = DataMgr.Instance.Get<int>(DataKeys.PLANE_ID);
         UpdateData(id);
+        UpdateSlider();
     }
 }
