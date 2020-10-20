@@ -36,8 +36,7 @@ public abstract class ViewBase : MonoBehaviour,IView
         InitUpdateView();
         
         //添加当前viewbase下所有子类的update函数
-        AddUpdateActionToButton();
-        UpdateAction();
+        //UpdateAction();
     }
 
     private void InitSubView()
@@ -88,20 +87,14 @@ public abstract class ViewBase : MonoBehaviour,IView
                 list.Add(viewInterface);
         }
     }
-
-    private void AddUpdateActionToButton()
-    {
-        foreach (Button button in GetComponentsInChildren<Button>())
-        {
-            //Debug.LogError(name+" "+button.name);
-            //todo::这里好像执行子类updateview多次
-            button.onClick.AddListener(UpdateAction);
-        }
-    }
+    
 
     public virtual void UpdateFunc()
     {
-        
+        foreach (IViewUpdate viewUpdate in _viewUpdates)
+        {
+            viewUpdate.UpdateFunc();
+        }
     }
 
     public Transform GetTrans()
@@ -112,13 +105,11 @@ public abstract class ViewBase : MonoBehaviour,IView
     private void InitUpdateView()
     {
         _viewUpdates = transform.GetComponentsInChildren<IViewUpdate>().ToList();
-    }
-
-    private void UpdateAction()
-    {
-        foreach (IViewUpdate viewUpdate in _viewUpdates)
+        foreach (var viewUpdate in _viewUpdates)
         {
-            viewUpdate.UpdateFunc();
+            Debug.LogError(viewUpdate.GetType().Name);
         }
+        _viewUpdates.Remove(this);
     }
+    
 }

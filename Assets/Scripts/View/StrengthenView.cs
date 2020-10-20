@@ -8,5 +8,7 @@ public class StrengthenView : ViewBase
     {
         SwitchPlayer switchPlayer = UIUtil.Get("Switchplayer").GO.AddComponent<SwitchPlayer>();
         PlaneProperty property = UIUtil.Get("Property").GO.AddComponent<PlaneProperty>();
+        UIUtil.Get("Switchplayer").GO.AddComponent<SwitchPlayerController>();
+        UIUtil.Get("Property").GO.AddComponent<PlanePropertyController>();
     }
 }

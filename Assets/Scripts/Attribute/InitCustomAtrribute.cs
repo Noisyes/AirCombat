@@ -17,7 +17,7 @@ public class InitCustomAtrribute
                 if (attribute is BindPrefabAttribute)
                 {
                     var bindAttribute = attribute as BindPrefabAttribute;
-                    BindUtil.Bind(bindAttribute.Path,type);
+                    BindUtil.Bind(bindAttribute,type);
                 }
             }
         }

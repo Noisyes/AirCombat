@@ -8,7 +8,7 @@ public class BindPrefabAttribute : Attribute
     public string Path { get; }
     public int Priority { get; }
 
-    public BindPrefabAttribute(string path,int priority)
+    public BindPrefabAttribute(string path,int priority = 100)
     {
         this.Path = path;
         this.Priority = priority;

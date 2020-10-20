@@ -9,10 +9,7 @@ namespace View
     {
         protected override void InitChild()
         {
-            UIUtil.Get("Start").AddListener(() =>
-            {
-                UIMgr.Instance.Show(Paths.SELECTEDHERO_VIEW);
-            });
+
         }
     }
 }

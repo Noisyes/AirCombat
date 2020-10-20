@@ -5,19 +5,29 @@ using UnityEngine;
 
 public class BindUtil
 {
-    private static Dictionary<string,HashSet<Type>> BindDic = new Dictionary<string, HashSet<Type>>();
+    private static Dictionary<string,List<Type>> BindDic = new Dictionary<string, List<Type>>();
+    private static Dictionary<Type,int> _priorityDic = new Dictionary<Type, int>();
 
-    public static void Bind(string path, Type type)
+    public static void Bind(BindPrefabAttribute data, Type type)
     {
+        string path = data.Path;
         if (!BindDic.ContainsKey(path))
         {
-            BindDic.Add(path, new HashSet<Type>());
+            BindDic.Add(path, new List<Type>());
         }
-
-        BindDic[path].Add(type);
+        if (!BindDic[path].Contains(type))
+        {
+            BindDic[path].Add(type);
+            _priorityDic.Add(type,data.Priority);
+            BindDic[path].Sort(new BindCompare());
+        }
+        else
+        {
+            Debug.LogError("重复绑定脚本 脚本名字:"+type.Name);
+        }
     }
 
-    public static HashSet<Type> GetType(string path)
+    public static List<Type> GetType(string path)
     {
         if (BindDic.ContainsKey(path))
         {
@@ -27,6 +37,16 @@ public class BindUtil
         {
             Debug.LogError("脚本绑定字典没有关键字");
             return null;
+        }
+    }
+
+    public class BindCompare : IComparer<Type>
+    {
+        public int Compare(Type x, Type y)
+        {
+            if (x == null) return 1;
+            if (y == null) return -1;
+            return _priorityDic[x] - _priorityDic[y];
         }
     }
 }

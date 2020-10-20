@@ -48,20 +48,13 @@ public class UIMgr : NormalSingleton<UIMgr>
         else
         {
             var viewGO = LoadMgr.Instance.LoadPath(path, CurCanvas.transform);
-            HashSet<Type> types = BindUtil.GetType(path);
+            List<Type> types = BindUtil.GetType(path);
             if (types != null)
             {
-                foreach (Type type in types)
-                {
-                    viewGO.AddComponent(type);
-                    Debug.LogError("挂载上了 脚本名称："+type.Name);
-                }
-
-                IInit[] inits = viewGO.GetComponents<IInit>();
-                foreach (var init in inits)
-                {
-                    init.Init();
-                }
+                AddTypeComponent(viewGO,types);
+                InitComponents(viewGO);
+                AddUpdateListener(viewGO);
+                
                 IView view = viewGO.GetComponent<IView>();
                 if (view != null)
                 {
@@ -79,6 +72,34 @@ public class UIMgr : NormalSingleton<UIMgr>
                 Debug.LogError("没有挂载上脚本");
                 return null;
             }
+        }
+    }
+
+    private void AddTypeComponent(GameObject viewGO,List<Type> types)
+    {
+        foreach (Type type in types)
+        {
+            viewGO.AddComponent(type);
+            Debug.LogError("挂载上了 脚本名称："+type.Name);
+        }
+    }
+
+    private void InitComponents(GameObject viewGO)
+    {
+        IInit[] inits = viewGO.GetComponents<IInit>();
+        foreach (var init in inits)
+        {
+            init.Init();
+        }
+    }
+
+    private void AddUpdateListener(GameObject viewGO)
+    {
+        var controller = viewGO.GetComponent<IController>();
+        foreach (IUpdate update in viewGO.GetComponents<IUpdate>())
+        {
+            Debug.LogError(update.GetType().Name);
+            controller?.AddUpdateListener(update.UpdateFunc);
         }
     }
 
