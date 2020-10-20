@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IViewUpdate
+public interface IViewUpdate :IUpdate
 {
-    void UpdateView();
 }

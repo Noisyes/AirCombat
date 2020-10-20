@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IViewInit
+public interface IViewInit : IInit
 {
-    void Init();
 }

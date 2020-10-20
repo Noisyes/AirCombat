@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace View
 {
-    [BindPrefab(Paths.START_VIEW)]
+    [BindPrefab(Paths.START_VIEW,Const.BIND_PREFAB_PRIORITY_VIEW)]
     public class StartView : ViewBase
     {
         protected override void InitChild()

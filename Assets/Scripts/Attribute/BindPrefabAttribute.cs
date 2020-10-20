@@ -5,10 +5,12 @@ using UnityEngine;
 [AttributeUsage(AttributeTargets.Class)]
 public class BindPrefabAttribute : Attribute
 {
-    public string Path { get; private set; }
+    public string Path { get; }
+    public int Priority { get; }
 
-    public BindPrefabAttribute(string path)
+    public BindPrefabAttribute(string path,int priority)
     {
         this.Path = path;
+        this.Priority = priority;
     }
 }

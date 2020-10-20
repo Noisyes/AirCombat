@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IViewHide: IHide
+public interface IHide
 {
+    void Hide();
 }

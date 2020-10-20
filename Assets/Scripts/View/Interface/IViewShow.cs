@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IViewShow
+public interface IViewShow : IShow
 {
-    void Show();
 }

@@ -93,7 +93,7 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
         return newName;
     }
 
-    public void UpdateView()
+    public void UpdateFunc()
     {
         UpdateData(GameStateMgr.Instance.selectedID);
         UpdateSlider();

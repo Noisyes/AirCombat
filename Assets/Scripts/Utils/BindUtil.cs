@@ -5,21 +5,19 @@ using UnityEngine;
 
 public class BindUtil
 {
-    private static Dictionary<string,Type> BindDic = new Dictionary<string, Type>();
+    private static Dictionary<string,HashSet<Type>> BindDic = new Dictionary<string, HashSet<Type>>();
 
     public static void Bind(string path, Type type)
     {
         if (!BindDic.ContainsKey(path))
         {
-            BindDic.Add(path, type);
+            BindDic.Add(path, new HashSet<Type>());
         }
-        else
-        {
-            Debug.LogError("重复绑定特性");
-        }
+
+        BindDic[path].Add(type);
     }
 
-    public static Type GetType(string path)
+    public static HashSet<Type> GetType(string path)
     {
         if (BindDic.ContainsKey(path))
         {

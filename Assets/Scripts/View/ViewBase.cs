@@ -99,9 +99,14 @@ public abstract class ViewBase : MonoBehaviour,IView
         }
     }
 
-    public virtual void UpdateView()
+    public virtual void UpdateFunc()
     {
         
+    }
+
+    public Transform GetTrans()
+    {
+        return transform;
     }
 
     private void InitUpdateView()
@@ -113,7 +118,7 @@ public abstract class ViewBase : MonoBehaviour,IView
     {
         foreach (IViewUpdate viewUpdate in _viewUpdates)
         {
-            viewUpdate.UpdateView();
+            viewUpdate.UpdateFunc();
         }
     }
 }

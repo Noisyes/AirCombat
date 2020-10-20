@@ -34,7 +34,7 @@ public class UIMgr : NormalSingleton<UIMgr>
         }
 
         IView topView =  InitView(path);
-        topView.Show();
+        ShowAll(topView);
         _uiStack.Push(path);
         return topView;
     }
@@ -48,21 +48,29 @@ public class UIMgr : NormalSingleton<UIMgr>
         else
         {
             var viewGO = LoadMgr.Instance.LoadPath(path, CurCanvas.transform);
-            Type type = BindUtil.GetType(path);
-            IView view;
-            if (type != null)
+            HashSet<Type> types = BindUtil.GetType(path);
+            if (types != null)
             {
-                view = viewGO.AddComponent(type) as IView;
+                foreach (Type type in types)
+                {
+                    viewGO.AddComponent(type);
+                    Debug.LogError("挂载上了 脚本名称："+type.Name);
+                }
+
+                IInit[] inits = viewGO.GetComponents<IInit>();
+                foreach (var init in inits)
+                {
+                    init.Init();
+                }
+                IView view = viewGO.GetComponent<IView>();
                 if (view != null)
                 {
-                    view.Init();
                     _views.Add(path,view);
-                    Debug.LogError("挂载上了 脚本名称："+ type.Name);
                     return view;
                 }
                 else
                 {
-                    Debug.LogError("当前脚本没有继承IView" + type.Name);
+                    Debug.LogError("当前脚本没有继承IView");
                     return null;
                 }
             }
@@ -79,9 +87,24 @@ public class UIMgr : NormalSingleton<UIMgr>
         if (_uiStack.Count <= 1)
             return;
         string topPath = _uiStack.Pop();
-        _views[topPath].Hide();
+        HideAll(_views[topPath]);
 
         topPath = _uiStack.Peek();
-        _views[topPath].Show();
+        ShowAll(_views[topPath]);
+    }
+
+    private void ShowAll(IView view)
+    {
+        foreach (IShow show in view.GetTrans().GetComponents<IShow>())
+        {
+            show.Show();
+        }
+    }
+    private void HideAll(IView view)
+    {
+        foreach (IHide hide in view.GetTrans().GetComponents<IHide>())
+        {
+            hide.Hide();
+        }
     }
 }
