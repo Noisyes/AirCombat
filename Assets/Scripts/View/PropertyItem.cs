@@ -23,7 +23,6 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
         _key = key;
         _itemID++;
         UpdatePos();
-        InitButtonAction();
     }
 
     private void UpdatePos()
@@ -31,31 +30,7 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
         RectTransform rectTransform = transform.Rect();
         rectTransform.anchoredPosition -= rectTransform.rect.height * _itemID*Vector2.up;
     }
-
-    private void InitButtonAction()
-    {
-        transform.AddButtonAction("Add",AddAction);
-    }
-
-    private void AddAction()
-    {
-        string key = GetNewKey(ItemKey.value);
-        Transform ts = transform.Find(ConvertName(ItemKey.value.ToString()));
-        var value = GetValue(key);
-        key = GetNewKey(ItemKey.grouth);
-        var grouth = GetValue(key);
-        value += grouth;
-        value = Mathf.Clamp(value, 0, GetValue(GetNewKey(ItemKey.maxvalue)));
-        DataMgr.Instance.SetObject(GetNewKey(ItemKey.value),value);
-    }
-
-    private string GetNewKey(ItemKey key)
-    {
-        var id = GameStateMgr.Instance.selectedID;
-        string newKey = KeyUtil.CreateKey(id, _key + key);
-        return newKey;
-    }
-
+    
     private int GetValue(string key)
     {
         return DataMgr.Instance.Get<int>(key);
@@ -65,7 +40,7 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
     {
         for (ItemKey i = 0; i < ItemKey.grouth; i++)
         {
-            string itemName = ConvertName(i.ToString());
+            string itemName = KeyUtil.ConvertName(i.ToString());
             Transform ts = transform.Find(itemName);
             if (ts != null)
             {
@@ -83,25 +58,24 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
     {
         var slider = transform.Find("Slider").GetComponent<Slider>();
         slider.minValue = 0;
-        slider.maxValue = GetValue(GetNewKey(ItemKey.maxvalue));
-        slider.value = DataMgr.Instance.Get<int>(GetNewKey(ItemKey.value));
+        slider.maxValue = GetValue(KeyUtil.GetNewKey(ItemKey.maxvalue,_key));
+        slider.value = DataMgr.Instance.Get<int>(KeyUtil.GetNewKey(ItemKey.value,_key));
     }
 
-    private string ConvertName(string oldName)
-    {
-        string newName = oldName.Substring(0, 1).ToUpper() + oldName.Substring(1);
-        return newName;
-    }
+
 
     public void UpdateFunc()
     {
-        UpdateData(GameStateMgr.Instance.selectedID);
-        UpdateSlider();
+        UpdatePlaneID(GameStateMgr.Instance.selectedID);
     }
 
     public void Show()
     {
-        var id  = DataMgr.Instance.Get<int>(DataKeys.PLANE_ID);
+        UpdatePlaneID(DataMgr.Instance.Get<int>(DataKeys.PLANE_ID));
+    }
+
+    private void UpdatePlaneID(int id)
+    {
         UpdateData(id);
         UpdateSlider();
     }

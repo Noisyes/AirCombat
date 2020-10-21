@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using LitJson;
 using UnityEngine;
 
-public class ConfigMgr  : NormalSingleton<ConfigMgr>
+public class ConfigMgr  : NormalSingleton<ConfigMgr>,IInit
 {
     public void Init()
     {

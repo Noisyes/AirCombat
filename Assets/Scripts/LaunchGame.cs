@@ -6,9 +6,9 @@ public class LaunchGame : MonoBehaviour
 {
     private void Awake()
     {
-        DataMgr.Instance.ClearAll();
-        ConfigMgr.Instance.Init();
-        InitCustomAtrribute.Init();
+        //DataMgr.Instance.ClearAll();
+        IInit lifeCycle = LifeCycleMgr.Instance;
+        lifeCycle.Init();
         UIMgr.Instance.Show(Paths.START_VIEW);
     }
 }

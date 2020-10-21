@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 
-public class InitCustomAtrribute
+public class InitCustomAtrribute:IInit
 {
-    public static void Init()
+    public  void Init()
     {
         Assembly assembly = Assembly.GetAssembly(typeof(BindPrefabAttribute));
         Type[] types = assembly.GetTypes();

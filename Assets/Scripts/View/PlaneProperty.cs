@@ -7,7 +7,7 @@ public class PlaneProperty : ViewBase
 {
     public enum Property
     {
-        attack,
+        attack = 0,
         fireRate,
         life,
         COUNT

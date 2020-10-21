@@ -92,7 +92,6 @@ public abstract class ControllerBase : MonoBehaviour,IController
         foreach (var button in buttons)
         {
             button.onClick.AddListener(()=>{_updateAction?.Invoke();});
-            _updateAction?.Invoke();
         }
     }
 }
