@@ -80,7 +80,6 @@ public class UIMgr : NormalSingleton<UIMgr>
         foreach (Type type in types)
         {
             viewGO.AddComponent(type);
-            Debug.LogError("挂载上了 脚本名称："+type.Name);
         }
     }
 
@@ -98,7 +97,6 @@ public class UIMgr : NormalSingleton<UIMgr>
         var controller = viewGO.GetComponent<IController>();
         foreach (IUpdate update in viewGO.GetComponents<IUpdate>())
         {
-            Debug.LogError(update.GetType().Name);
             controller?.AddUpdateListener(update.UpdateFunc);
         }
     }

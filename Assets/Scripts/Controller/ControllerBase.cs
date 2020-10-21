@@ -88,14 +88,11 @@ public abstract class ControllerBase : MonoBehaviour,IController
     
     private void AddUpdateActionToButton()
     {
-        foreach (Transform trans in transform)
+        var buttons = GetComponentsInChildren<Button>();
+        foreach (var button in buttons)
         {
-            var button = trans.GetComponent<Button>();
-            if (button != null)
-            {
-                button.onClick.AddListener(()=>{_updateAction?.Invoke();});
-                Debug.LogError(button.name);
-            }
+            button.onClick.AddListener(()=>{_updateAction?.Invoke();});
+            _updateAction?.Invoke();
         }
     }
 }

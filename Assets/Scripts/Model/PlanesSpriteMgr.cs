@@ -12,7 +12,7 @@ public class PlanesSpriteMgr : NormalSingleton<PlanesSpriteMgr>,IInit
         get
         {
             if (_spriteDictionary == null)
-                return 0;
+                LoadSprites(Paths.PLAYER);
             return _spriteDictionary.Count;
         }
     }

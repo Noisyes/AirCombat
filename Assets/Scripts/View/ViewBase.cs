@@ -105,10 +105,6 @@ public abstract class ViewBase : MonoBehaviour,IView
     private void InitUpdateView()
     {
         _viewUpdates = transform.GetComponentsInChildren<IViewUpdate>().ToList();
-        foreach (var viewUpdate in _viewUpdates)
-        {
-            Debug.LogError(viewUpdate.GetType().Name);
-        }
         _viewUpdates.Remove(this);
     }
     
