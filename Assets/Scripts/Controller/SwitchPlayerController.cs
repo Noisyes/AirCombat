@@ -8,7 +8,7 @@ public class SwitchPlayerController : ControllerBase
 
     public override void InitChild()
     {
-        _id = DataMgr.Instance.Get<int>(DataKeys.PLANE_ID);
+        _id = DataMgr.Instance.Get<int>(DataKeys.Planes.PLANE_ID);
         transform.AddButtonAction("Left", () =>
         {
             OnSwitchBtn(ref _id, -1);

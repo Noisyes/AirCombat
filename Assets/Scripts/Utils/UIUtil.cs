@@ -66,4 +66,22 @@ public class UIUtilData
             Debug.LogError("当前物体没有Image组件， 物体名称为 :" + GO.name);
         }
     }
+
+    public void SetText<T>(T content)
+    {
+        SetText(content.ToString());
+    }
+    
+    
+    public void SetText(string content)
+    {
+        if (Text != null)
+        {
+            Text.text = content;
+        }
+        else
+        {
+            Debug.LogError("当前物体没有Text组件， 物体名称为 :" + GO.name);
+        }
+    }
 }

@@ -25,7 +25,8 @@ public class PlanesSpriteMgr : NormalSingleton<PlanesSpriteMgr>,IInit
         }
     }
     public void Init()
-    {    
+    {
+        GameStateMgr.Instance.selectedID = DataMgr.Instance.Get<int>(DataKeys.Planes.PLANE_ID);
         LoadSprites(Paths.PLAYER);
     }
     private void LoadSprites(string path)

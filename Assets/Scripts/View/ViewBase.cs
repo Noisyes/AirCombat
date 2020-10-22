@@ -53,6 +53,7 @@ public abstract class ViewBase : MonoBehaviour,IView
     public virtual void Show()
     {
         gameObject.SetActive(true);
+        UpdateFunc();
         foreach (IViewShow viewShow in _viewShows)
         {
             viewShow.Show();

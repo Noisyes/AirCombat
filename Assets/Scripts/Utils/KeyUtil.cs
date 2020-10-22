@@ -8,6 +8,11 @@ public class KeyUtil
     {
         return id + s;
     }
+
+    public static string CreateKey(string s)
+    {
+        return GameStateMgr.Instance.selectedID + s;
+    }
     public static string ConvertName(string oldName)
     {
         string newName = oldName.Substring(0, 1).ToUpper() + oldName.Substring(1);

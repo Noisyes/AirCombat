@@ -26,7 +26,8 @@ public class SwitchPlayer : ViewBase
     private void UpdateSprite()
     {
         var id = GameStateMgr.Instance.selectedID;
-        int level = DataMgr.Instance.Get<int>(DataKeys.LEVELS);
+        var key = KeyUtil.CreateKey(GameStateMgr.Instance.selectedID, DataKeys.Planes.LEVEL);
+        int level = DataMgr.Instance.Get<int>(key);
         UIUtil.Get("Icon").SetSprite(PlanesSpriteMgr.Instance[id,level]);
     }
 }

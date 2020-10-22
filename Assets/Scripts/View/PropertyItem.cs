@@ -71,7 +71,7 @@ public class PropertyItem : MonoBehaviour,IViewUpdate,IViewShow
 
     public void Show()
     {
-        UpdatePlaneID(DataMgr.Instance.Get<int>(DataKeys.PLANE_ID));
+        
     }
 
     private void UpdatePlaneID(int id)
