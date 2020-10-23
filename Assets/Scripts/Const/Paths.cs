@@ -6,6 +6,7 @@ public class Paths
 {
     public const string PREFAB_FOLDER = "Prefab/";
     public const string START_VIEW = PREFAB_FOLDER + "StartView";
+    public const string DIALOGUE_VIEW = PREFAB_FOLDER + "Dialog";
     public const string SELECTEDHERO_VIEW = PREFAB_FOLDER + "SelectedHeroView";
     public const string STRENGTHEN_VIEW = PREFAB_FOLDER + "StrengthenView";
     public const string PROPERTY_ITEM = PREFAB_FOLDER + "PropertyItem";

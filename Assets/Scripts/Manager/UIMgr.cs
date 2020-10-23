@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -37,6 +38,14 @@ public class UIMgr : NormalSingleton<UIMgr>
         ShowAll(topView);
         _uiStack.Push(path);
         return topView;
+    }
+
+    public DialogueView ShowDialog(string content, Action yesAction = null, Action noAction = null)
+    {
+        var dialogueObj = LoadMgr.Instance.LoadPath(Paths.DIALOGUE_VIEW, _canvas.transform);
+        var dialog = dialogueObj.AddComponent<DialogueView>();
+        dialog.InitDialogue(content,yesAction,noAction);
+        return dialog;
     }
 
     private IView InitView(string path)
