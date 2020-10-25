@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameStateMgr : NormalSingleton<GameStateMgr>
 {
     public int selectedID { get; set; }
+    public Hero hero { get; set; }
 
     public int selectedLevel
     {

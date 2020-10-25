@@ -3,27 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SelectHero : MonoBehaviour
+public class SelectHero : ViewBase
 {
     // Start is called before the first frame update
-    private HeroItem[] _heroItems;
-    void Start()
+    
+    protected override void InitChild()
     {
-        _heroItems = new HeroItem[transform.childCount];
-        int i = 0;
         foreach (Transform trans in transform)
         {
-            _heroItems[i] = trans.gameObject.AddComponent<HeroItem>();
-            _heroItems[i].CallBack = ResetColor;
-            i++;
-        }
-    }
-
-    private void ResetColor()
-    {
-        foreach (HeroItem heroItem in _heroItems)
-        {
-            heroItem.Unselect();
+            trans.gameObject.AddComponent<HeroItem>();
         }
     }
 }

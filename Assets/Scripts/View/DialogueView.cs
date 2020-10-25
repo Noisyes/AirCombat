@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class DialogueView : MonoBehaviour
+public class DialogueView : MonoBehaviour,IView
 {
     public UIUtil uiUtil;
     private string _onePath = "Frame/Buttons/One";
@@ -126,7 +126,7 @@ public class DialogueView : MonoBehaviour
     {
         if (callBack == null)
         {
-            //todo::back
+            transform.AddButtonAction(_onePath+_yesBtn,UIMgr.Instance.Back);
         }
         else
         { 
@@ -138,5 +138,30 @@ public class DialogueView : MonoBehaviour
     {
         transform.AddButtonAction(_twoPath+_yesBtn,yesAction);
         transform.AddButtonAction(_twoPath+_noBtn,noAction);
+    }
+
+    public void Init()
+    {
+        
+    }
+
+    public void Show()
+    {
+        
+    }
+
+    public void Hide()
+    {
+        Destroy(gameObject);
+    }
+
+    public void UpdateFunc()
+    {
+        
+    }
+
+    public Transform GetTrans()
+    {
+        return transform;
     }
 }

@@ -10,6 +10,5 @@ public class LaunchGame : MonoBehaviour
         IInit lifeCycle = LifeCycleMgr.Instance;
         lifeCycle.Init();
         UIMgr.Instance.Show(Paths.START_VIEW);
-        UIMgr.Instance.ShowDialog("你好人类哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈");
     }
 }

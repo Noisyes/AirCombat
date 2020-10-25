@@ -26,6 +26,10 @@ public class StrengthenController : ControllerBase
             GameStateMgr.Instance.SetMoney(type,money-cost);
             DoUpgrades();
         }
+        else
+        {
+            UIMgr.Instance.ShowDialog("你没有钱拉");
+        }
     }
     
 

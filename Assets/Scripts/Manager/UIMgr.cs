@@ -10,6 +10,7 @@ public class UIMgr : NormalSingleton<UIMgr>
     private Stack<string> _uiStack = new Stack<string>();
     private Dictionary<string,IView> _views = new Dictionary<string, IView>();
     private Canvas _canvas;
+    private DialogueView _dialogViwe;
     public Canvas CurCanvas
     {
         get
@@ -45,6 +46,7 @@ public class UIMgr : NormalSingleton<UIMgr>
         var dialogueObj = LoadMgr.Instance.LoadPath(Paths.DIALOGUE_VIEW, _canvas.transform);
         var dialog = dialogueObj.AddComponent<DialogueView>();
         dialog.InitDialogue(content,yesAction,noAction);
+        _dialogViwe = dialog;
         return dialog;
     }
 
@@ -114,11 +116,19 @@ public class UIMgr : NormalSingleton<UIMgr>
     {
         if (_uiStack.Count <= 1)
             return;
-        string topPath = _uiStack.Pop();
-        HideAll(_views[topPath]);
-
-        topPath = _uiStack.Peek();
-        ShowAll(_views[topPath]);
+        if (_dialogViwe == null)
+        {
+            string topPath = _uiStack.Pop();
+            HideAll(_views[topPath]);
+            topPath = _uiStack.Peek();
+            ShowAll(_views[topPath]);
+        }
+        else
+        {
+            _dialogViwe.Hide();
+            _dialogViwe = null;
+            _views[_uiStack.Peek()].Show();
+        }
     }
 
     private void ShowAll(IView view)

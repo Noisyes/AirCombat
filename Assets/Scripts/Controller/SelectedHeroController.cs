@@ -6,6 +6,7 @@ public class SelectedHeroController : ControllerBase
 {
     public override void InitChild()
     {
+        transform.Find("Heros").gameObject.AddComponent<SelectHeroController>();
         transform.AddButtonAction("OK/Start", () =>
         {
             //todo::/todo:切换到选择英雄界面;

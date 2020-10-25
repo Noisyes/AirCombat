@@ -33,6 +33,10 @@ public class PropertyItemController : ControllerBase
             GameStateMgr.Instance.SetMoney(type,money-cost);
             ChangeData();
         }
+        else
+        {
+            UIMgr.Instance.ShowDialog("你没有钱啦！");
+        }
     }
 
     private void ChangeData()
