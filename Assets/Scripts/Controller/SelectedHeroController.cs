@@ -9,7 +9,7 @@ public class SelectedHeroController : ControllerBase
         transform.Find("Heros").gameObject.AddComponent<SelectHeroController>();
         transform.AddButtonAction("OK/Start", () =>
         {
-            //todo::/todo:切换到选择英雄界面;
+            UIMgr.Instance.Show(Paths.LEVELS_VIEW);
         });
         transform.AddButtonAction("Exit", () =>
         {
