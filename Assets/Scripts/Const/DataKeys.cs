@@ -8,6 +8,7 @@ public class DataKeys : MonoBehaviour
     public const string STAR = "Star";
     public const string DIAMOND = "Diamond";
     public const string NAME = "name";
+    public const string PASSLEVELS = "passlevels";
     public class Planes
     {
         public const string LEVEL = "level";

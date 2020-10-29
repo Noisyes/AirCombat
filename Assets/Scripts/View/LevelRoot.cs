@@ -34,6 +34,26 @@ public class LevelRoot : ViewBase
 
     private void onComplete(int[] list)
     {
-        
+        if (list.Length != (int)levels.Count)
+        {
+            Debug.LogError("数量不对劲");
+            return;
+        }
+
+        int totalCount = list[(int) levels.totalLevels];
+        int eachRow = list[(int) levels.eachRow];
+        SpawnItem(eachRow,totalCount);
+    }
+
+    private void SpawnItem(int eachRow,int totalCount)
+    {
+        GameObject go;
+        LevelItem levelItem;
+        for (int i = 0; i < totalCount; i++)
+        {
+            go = LoadMgr.Instance.LoadPath(Paths.LEVEL_ITEM,transform);
+            levelItem = go.AddComponent<LevelItem>();
+            levelItem.InitData(i,eachRow);
+        }
     }
 }

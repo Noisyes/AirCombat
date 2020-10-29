@@ -11,6 +11,7 @@ public class Paths
     public const string STRENGTHEN_VIEW = PREFAB_FOLDER + "StrengthenView";
     public const string PROPERTY_ITEM = PREFAB_FOLDER + "PropertyItem";
     public const string LEVELS_VIEW = PREFAB_FOLDER + "LevelsView";
+    public const string LEVEL_ITEM = PREFAB_FOLDER + "LevelItem";
     
     public static string STREAMINGASSET_FOLDER = Application.streamingAssetsPath + "/Config";
     public static string INITPLANE = STREAMINGASSET_FOLDER + "/InitPlanes.json";
@@ -18,6 +19,4 @@ public class Paths
     
     public const string PICTURE = "Picture/";
     public const string PLAYER = PICTURE + "Player";
-    
-
 }
